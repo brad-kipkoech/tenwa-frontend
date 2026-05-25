@@ -3,9 +3,7 @@ import { useTranslation } from "react-i18next";
 import {
     CheckCircle2,
     Loader2,
-    Mail,
     Minus,
-    Package,
     Plus,
     Send,
 } from "lucide-react";
