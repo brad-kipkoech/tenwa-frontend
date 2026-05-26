@@ -489,23 +489,22 @@ function QuoteForm() {
                                     <label className={labelClass}>
                                         {t("quoteForm.labels.urgency")}
                                     </label>
+
                                     <select
                                         name="urgency"
                                         value={formData.urgency}
                                         onChange={handleChange}
                                         className={inputClass}
                                     >
-                                        <option value="Normal">
-                                            {t("quoteForm.options.normal")}
+                                        <option value="General Service">
+                                            General Service
                                         </option>
-                                        <option value="Urgent">
-                                            {t("quoteForm.options.urgent")}
-                                        </option>
-                                        <option value="Very Urgent">
-                                            {t("quoteForm.options.veryUrgent")}
+                                        <option value="Express Service">
+                                            Express Service
                                         </option>
                                     </select>
                                 </div>
+
 
                                 <div>
                                     <label className={labelClass}>
@@ -574,7 +573,7 @@ function QuoteForm() {
                     )}
                 </div>
             </div>
-        </section>
+        </section >
     );
 }
 
