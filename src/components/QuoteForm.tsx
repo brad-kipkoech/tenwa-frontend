@@ -487,12 +487,12 @@ function QuoteForm() {
                             <div className="grid gap-4 sm:grid-cols-2">
                                 <div>
                                     <label className={labelClass}>
-                                        {t("quoteForm.labels.urgency")}
+                                        Service Type
                                     </label>
 
                                     <select
-                                        name="urgency"
-                                        value={formData.urgency}
+                                        name="serviceType"
+                                        value={formData.serviceType}
                                         onChange={handleChange}
                                         className={inputClass}
                                     >
