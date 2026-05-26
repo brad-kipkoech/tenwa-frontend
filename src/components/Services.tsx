@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import planeImage from "../assets/plane.png";
 import cargoImage from "../assets/cargo.png";
 import heroImage from "../assets/hero.png";
-
+import roadFreightImage from "../assets/road-freight.png";
 const services = [
     {
         titleKey: "services.items.airFreight.title",
@@ -22,7 +22,7 @@ const services = [
         titleKey: "services.items.roadFreight.title",
         descriptionKey: "services.items.roadFreight.description",
         icon: Truck,
-        image: cargoImage,
+        image: roadFreightImage,
     },
     {
         titleKey: "services.items.clearing.title",
