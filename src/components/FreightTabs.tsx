@@ -2,6 +2,10 @@ import { useState } from "react";
 import { Plane, Ship, Truck } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
+import cargoImage from "../assets/cargo.png";
+import planeImage from "../assets/plane.png";
+import roadFreightImage from "../assets/road-freight.png";
+
 type TabKey = "sea" | "road" | "air";
 
 const tabConfig = [
@@ -10,18 +14,24 @@ const tabConfig = [
         labelKey: "freightTabs.tabs.sea",
         contentKey: "freightTabs.content.sea",
         icon: Ship,
+        image: cargoImage,
+        imageAlt: "Sea freight cargo containers",
     },
     {
         key: "road" as TabKey,
         labelKey: "freightTabs.tabs.road",
         contentKey: "freightTabs.content.road",
         icon: Truck,
+        image: roadFreightImage,
+        imageAlt: "Truck transporting a shipping container by road",
     },
     {
         key: "air" as TabKey,
         labelKey: "freightTabs.tabs.air",
         contentKey: "freightTabs.content.air",
         icon: Plane,
+        image: planeImage,
+        imageAlt: "Air freight cargo plane",
     },
 ];
 
@@ -48,7 +58,10 @@ function FreightTabs() {
     const { t } = useTranslation();
     const [activeTab, setActiveTab] = useState<TabKey>("sea");
 
-    const activeContent = tabConfig.find((tab) => tab.key === activeTab);
+    const activeContent =
+        tabConfig.find((tab) => tab.key === activeTab) ?? tabConfig[0];
+
+    const ActiveIcon = activeContent.icon;
 
     return (
         <section id="freight" className="bg-slate-50 px-5 py-24 lg:px-8">
@@ -90,19 +103,29 @@ function FreightTabs() {
                 </div>
 
                 <div className="mt-8 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
-                    <div className="grid gap-0 lg:grid-cols-[0.85fr_1.15fr]">
-                        <div className="bg-[#061846] p-8 text-white">
-                            <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-white text-[#E30613]">
-                                {activeContent && <activeContent.icon size={32} />}
+                    <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
+                        <div className="relative min-h-[360px] overflow-hidden bg-[#061846]">
+                            <img
+                                src={activeContent.image}
+                                alt={activeContent.imageAlt}
+                                className="absolute inset-0 h-full w-full object-cover"
+                            />
+
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#061846]/95 via-[#061846]/75 to-[#061846]/30" />
+
+                            <div className="relative z-10 flex h-full min-h-[360px] flex-col justify-end p-8 text-white">
+                                <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-white text-[#E30613] shadow-xl">
+                                    <ActiveIcon size={32} />
+                                </div>
+
+                                <h3 className="mt-8 text-3xl font-black">
+                                    {t(activeContent.labelKey)}
+                                </h3>
+
+                                <p className="mt-4 max-w-xl leading-8 text-slate-200">
+                                    {t(activeContent.contentKey)}
+                                </p>
                             </div>
-
-                            <h3 className="mt-8 text-3xl font-black">
-                                {activeContent ? t(activeContent.labelKey) : ""}
-                            </h3>
-
-                            <p className="mt-4 leading-8 text-slate-200">
-                                {activeContent ? t(activeContent.contentKey) : ""}
-                            </p>
                         </div>
 
                         <div className="grid gap-4 p-8 sm:grid-cols-2">
