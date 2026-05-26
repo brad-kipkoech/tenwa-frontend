@@ -268,7 +268,7 @@ export const resources = {
                 demoStatus: "Demo status",
                 enterCodeTitle: "Enter a tracking code",
                 enterCodeText:
-                    "Shipment status will appear here after the backend is connected.",
+                    "Shipment status will appear here.",
                 currentUpdate: "Current update",
                 currentUpdateText:
                     "Shipment update will come from the backend database.",
@@ -622,7 +622,7 @@ export const resources = {
                 demoStatus: "Hali ya mfano",
                 enterCodeTitle: "Ingiza tracking code",
                 enterCodeText:
-                    "Hali ya mzigo itaonekana hapa baada ya backend kuunganishwa.",
+                    "Hali ya mzigo itaonekana hapa.",
                 currentUpdate: "Taarifa ya sasa",
                 currentUpdateText:
                     "Taarifa ya mzigo itatoka kwenye database ya backend.",
@@ -980,7 +980,7 @@ export const resources = {
                 demoStatus: "Statut de démonstration",
                 enterCodeTitle: "Entrez un code de suivi",
                 enterCodeText:
-                    "Le statut de l’expédition apparaîtra ici après la connexion du backend.",
+                    "Le statut de l’expédition apparaîtra ici.",
                 currentUpdate: "Mise à jour actuelle",
                 currentUpdateText:
                     "La mise à jour de l’expédition viendra de la base de données backend.",
@@ -1328,7 +1328,7 @@ export const resources = {
                 button: "跟踪",
                 demoStatus: "演示状态",
                 enterCodeTitle: "输入跟踪代码",
-                enterCodeText: "后端连接后，货物状态将在此处显示。",
+                enterCodeText: "货物状态将在此处显示。",
                 currentUpdate: "当前更新",
                 currentUpdateText: "货物更新将来自后端数据库。",
                 lastUpdated: "最后更新",
@@ -1666,7 +1666,7 @@ export const resources = {
                 button: "تتبع",
                 demoStatus: "حالة تجريبية",
                 enterCodeTitle: "أدخل رمز التتبع",
-                enterCodeText: "ستظهر حالة الشحنة هنا بعد ربط الواجهة الخلفية.",
+                enterCodeText: "ستظهر حالة الشحنة هنا.",
                 currentUpdate: "التحديث الحالي",
                 currentUpdateText:
                     "سيأتي تحديث الشحنة من قاعدة بيانات الواجهة الخلفية.",
@@ -2007,7 +2007,7 @@ export const resources = {
                 demoStatus: "Estado demo",
                 enterCodeTitle: "Ingresa un código de rastreo",
                 enterCodeText:
-                    "El estado del envío aparecerá aquí después de conectar el backend.",
+                    "El estado del envío aparecerá aquí.",
                 currentUpdate: "Actualización actual",
                 currentUpdateText:
                     "La actualización del envío vendrá desde la base de datos backend.",
@@ -2349,7 +2349,7 @@ export const resources = {
                 demoStatus: "Demo-Status",
                 enterCodeTitle: "Tracking-Code eingeben",
                 enterCodeText:
-                    "Der Sendungsstatus wird hier angezeigt, sobald das Backend verbunden ist.",
+                    "Der Sendungsstatus wird hier angezeigt.",
                 currentUpdate: "Aktuelles Update",
                 currentUpdateText:
                     "Das Sendungsupdate kommt aus der Backend-Datenbank.",
