@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Plane, Ship, Truck } from "lucide-react";
+import { Boxes, Plane, Ship, Truck } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 import cargoImage from "../assets/cargo.png";
 import planeImage from "../assets/plane.png";
 import roadFreightImage from "../assets/road-freight.png";
 
-type TabKey = "sea" | "road" | "air";
+type TabKey = "sea" | "road" | "air" | "import";
 
 const tabConfig = [
     {
@@ -32,6 +32,14 @@ const tabConfig = [
         icon: Plane,
         image: planeImage,
         imageAlt: "Air freight cargo plane",
+    },
+    {
+        key: "import" as TabKey,
+        labelKey: "freightTabs.tabs.import",
+        contentKey: "freightTabs.content.import",
+        icon: Boxes,
+        image: cargoImage,
+        imageAlt: "Import cargo containers and customs clearing",
     },
 ];
 

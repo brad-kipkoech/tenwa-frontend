@@ -5,6 +5,7 @@ import planeImage from "../assets/plane.png";
 import cargoImage from "../assets/cargo.png";
 import heroImage from "../assets/hero.png";
 import roadFreightImage from "../assets/road-freight.png";
+
 const services = [
     {
         titleKey: "services.items.airFreight.title",
@@ -30,6 +31,12 @@ const services = [
         icon: Boxes,
         image: heroImage,
     },
+    {
+        titleKey: "services.items.importClearing.title",
+        descriptionKey: "services.items.importClearing.description",
+        icon: Boxes,
+        image: cargoImage,
+    },
 ];
 
 function Services() {
@@ -52,7 +59,7 @@ function Services() {
                     </p>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
                     {services.map((service) => {
                         const Icon = service.icon;
                         const title = t(service.titleKey);

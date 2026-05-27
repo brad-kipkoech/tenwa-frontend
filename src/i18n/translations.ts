@@ -77,6 +77,11 @@ export const resources = {
                         description:
                             "Sourcing, handling and delivery of products for businesses, SMEs and individuals.",
                     },
+                    importClearing: {
+                        title: "Import Clearing & Logistics",
+                        description:
+                            "Import documentation, customs clearance, HS code guidance, Certificate of Conformity support, commercial value documentation and final delivery coordination.",
+                    },
                 },
             },
 
@@ -107,11 +112,13 @@ export const resources = {
                     sea: "Sea Freight",
                     road: "Road Freight",
                     air: "Air Freight",
+                    import: "Imports",
                 },
                 content: {
                     sea: "Our sea freight service supports bulk cargo, containerized shipments, imports and exports with cost-effective planning and dependable coordination from port to destination.",
                     road: "Our road freight service supports inland transportation, regional delivery and cross-border cargo movement with practical scheduling, timely updates and efficient cargo handling.",
                     air: "Our air freight service is ideal for urgent, sensitive and time-critical shipments that require fast transit, professional handling and reliable communication.",
+                    import: "We support import clearing, documentation, HS code guidance, Certificate of Conformity requirements, customs coordination and final delivery.",
                 },
                 highlights: {
                     speed: {
@@ -437,6 +444,11 @@ export const resources = {
                         description:
                             "Kutafuta bidhaa, kushughulikia na kusambaza kwa biashara, SMEs na watu binafsi.",
                     },
+                    importClearing: {
+                        title: "Clearing na Logistics za Uagizaji",
+                        description:
+                            "Usaidizi wa nyaraka za import, clearing ya forodha, mwongozo wa HS code, Certificate of Conformity, nyaraka za thamani ya biashara na uratibu wa delivery ya mwisho.",
+                    },
                 },
             },
 
@@ -467,11 +479,13 @@ export const resources = {
                     sea: "Usafiri wa Bahari",
                     road: "Usafiri wa Barabara",
                     air: "Usafiri wa Anga",
+                    import: "Import",
                 },
                 content: {
                     sea: "Huduma yetu ya sea freight inasaidia mizigo mikubwa, usafirishaji wa kontena, import na export kwa mipango nafuu na uratibu wa kutegemewa kutoka bandarini hadi mwisho.",
                     road: "Huduma yetu ya road freight inasaidia usafirishaji wa ndani, delivery za kikanda na mizigo ya mipakani kwa ratiba nzuri, taarifa kwa wakati na ushughulikiaji bora.",
                     air: "Huduma yetu ya air freight inafaa kwa mizigo ya dharura, nyeti na inayohitaji kufika haraka kupitia ushughulikiaji wa kitaalamu na mawasiliano ya kuaminika.",
+                    import: "Tunasaidia clearing ya import, nyaraka, mwongozo wa HS code, mahitaji ya Certificate of Conformity, uratibu wa forodha na delivery ya mwisho.",
                 },
                 highlights: {
                     speed: {
@@ -791,6 +805,11 @@ export const resources = {
                         description:
                             "Approvisionnement, manutention et livraison de produits pour les entreprises, PME et particuliers.",
                     },
+                    importClearing: {
+                        title: "Dédouanement et logistique d’importation",
+                        description:
+                            "Documentation d’importation, dédouanement, guidance sur le code HS, assistance au Certificat de Conformité, documentation de valeur commerciale et coordination de livraison finale.",
+                    },
                 },
             },
 
@@ -823,11 +842,13 @@ export const resources = {
                     sea: "Fret maritime",
                     road: "Fret routier",
                     air: "Fret aérien",
+                    import: "Importations",
                 },
                 content: {
                     sea: "Notre service de fret maritime prend en charge les cargaisons volumineuses, les expéditions conteneurisées, les importations et les exportations avec une planification économique et une coordination fiable du port à la destination.",
                     road: "Notre service de fret routier prend en charge le transport intérieur, les livraisons régionales et le mouvement transfrontalier avec une planification pratique, des mises à jour rapides et une manutention efficace.",
                     air: "Notre service de fret aérien est idéal pour les expéditions urgentes, sensibles et critiques nécessitant un transit rapide, une manutention professionnelle et une communication fiable.",
+                    import: "Nous accompagnons le dédouanement import, la documentation, le code HS, les exigences de Certificat de Conformité, la coordination douanière et la livraison finale.",
                 },
                 highlights: {
                     speed: {
@@ -1148,6 +1169,11 @@ export const resources = {
                         title: "综合供应",
                         description: "为企业、中小企业和个人提供采购、处理和配送服务。",
                     },
+                    importClearing: {
+                        title: "进口清关与物流",
+                        description:
+                            "提供进口文件、海关清关、HS 编码指导、符合性证书支持、商业价值文件以及最终配送协调服务。",
+                    },
                 },
             },
 
@@ -1177,11 +1203,13 @@ export const resources = {
                     sea: "海运",
                     road: "公路运输",
                     air: "空运",
+                    import: "进口",
                 },
                 content: {
                     sea: "我们的海运服务支持大宗货物、集装箱运输、进口和出口，并提供从港口到目的地的经济规划和可靠协调。",
                     road: "我们的公路运输服务支持内陆运输、区域配送和跨境货物流动，并提供实用调度、及时更新和高效货物处理。",
                     air: "我们的空运服务适合紧急、敏感和时间关键型货物，提供快速运输、专业处理和可靠沟通。",
+                    import: "我们支持进口清关、文件处理、HS 编码指导、符合性证书要求、海关协调以及最终配送。",
                 },
                 highlights: {
                     speed: {
@@ -1487,6 +1515,11 @@ export const resources = {
                         description:
                             "توريد ومعالجة وتسليم المنتجات للشركات والمؤسسات الصغيرة والأفراد.",
                     },
+                    importClearing: {
+                        title: "تخليص ولوجستيات الاستيراد",
+                        description:
+                            "دعم وثائق الاستيراد والتخليص الجمركي وإرشاد رمز HS وشهادة المطابقة ووثائق القيمة التجارية وتنسيق التسليم النهائي.",
+                    },
                 },
             },
 
@@ -1517,11 +1550,13 @@ export const resources = {
                     sea: "الشحن البحري",
                     road: "الشحن البري",
                     air: "الشحن الجوي",
+                    import: "الاستيراد",
                 },
                 content: {
                     sea: "يدعم الشحن البحري لدينا البضائع الكبيرة والشحنات بالحاويات والواردات والصادرات من خلال تخطيط اقتصادي وتنسيق موثوق من الميناء إلى الوجهة.",
                     road: "يدعم الشحن البري لدينا النقل الداخلي والتوصيل الإقليمي وحركة البضائع عبر الحدود من خلال جدولة عملية وتحديثات في الوقت المناسب ومعالجة فعالة للبضائع.",
                     air: "يعد الشحن الجوي لدينا مناسبًا للشحنات العاجلة والحساسة والمحددة بالوقت التي تتطلب نقلًا سريعًا ومعالجة احترافية وتواصلًا موثوقًا.",
+                    import: "ندعم تخليص الاستيراد والوثائق وإرشاد رمز HS ومتطلبات شهادة المطابقة والتنسيق الجمركي والتسليم النهائي.",
                 },
                 highlights: {
                     speed: {
@@ -1828,6 +1863,11 @@ export const resources = {
                         description:
                             "Abastecimiento, manejo y entrega de productos para empresas, pymes y personas.",
                     },
+                    importClearing: {
+                        title: "Despacho y logística de importación",
+                        description:
+                            "Documentación de importación, despacho aduanero, orientación sobre código HS, soporte de Certificado de Conformidad, documentación de valor comercial y coordinación de entrega final.",
+                    },
                 },
             },
             productsHandled: {
@@ -1856,11 +1896,13 @@ export const resources = {
                     sea: "Carga marítima",
                     road: "Transporte terrestre",
                     air: "Carga aérea",
+                    import: "Importaciones",
                 },
                 content: {
                     sea: "Nuestro servicio marítimo apoya carga a granel, envíos en contenedores, importaciones y exportaciones con planificación económica y coordinación confiable desde el puerto hasta el destino.",
                     road: "Nuestro transporte terrestre apoya transporte interior, entregas regionales y movimiento transfronterizo con programación práctica, actualizaciones oportunas y manejo eficiente.",
                     air: "Nuestra carga aérea es ideal para envíos urgentes, sensibles y críticos que requieren tránsito rápido, manejo profesional y comunicación confiable.",
+                    import: "Apoyamos el despacho de importación, documentación, orientación de código HS, requisitos de Certificado de Conformidad, coordinación aduanera y entrega final.",
                 },
                 highlights: {
                     speed: {
@@ -2169,6 +2211,11 @@ export const resources = {
                         description:
                             "Beschaffung, Handling und Lieferung von Produkten für Unternehmen, KMU und Privatpersonen.",
                     },
+                    importClearing: {
+                        title: "Importabfertigung & Logistik",
+                        description:
+                            "Unterstützung bei Importdokumenten, Zollabfertigung, HS-Code-Beratung, Konformitätszertifikat, Handelswertdokumentation und Koordination der finalen Lieferung.",
+                    },
                 },
             },
             productsHandled: {
@@ -2198,11 +2245,13 @@ export const resources = {
                     sea: "Seefracht",
                     road: "Straßenfracht",
                     air: "Luftfracht",
+                    import: "Importe",
                 },
                 content: {
                     sea: "Unsere Seefracht unterstützt Massengut, Containersendungen, Importe und Exporte mit kosteneffizienter Planung und zuverlässiger Koordination vom Hafen bis zum Zielort.",
                     road: "Unsere Straßenfracht unterstützt Inlandstransport, regionale Zustellung und grenzüberschreitende Frachtbewegungen mit praktischer Planung, zeitnahen Updates und effizientem Handling.",
                     air: "Unsere Luftfracht ist ideal für dringende, sensible und zeitkritische Sendungen, die schnellen Transit, professionelles Handling und zuverlässige Kommunikation benötigen.",
+                    import: "Wir unterstützen Importabfertigung, Dokumentation, HS-Code-Beratung, Anforderungen an Konformitätszertifikate, Zollkoordination und finale Lieferung.",
                 },
                 highlights: {
                     speed: {
