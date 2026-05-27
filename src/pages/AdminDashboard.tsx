@@ -42,11 +42,23 @@ type QuoteRequest = {
     email: string;
     phone: string;
     customerType: string;
+    requestType: "general" | "import";
     serviceType: string;
     commodityType: string;
+    pieces?: number;
+    weight?: number;
+    weightUnit?: string;
     origin: string;
     destination: string;
+    length?: string | null;
+    width?: string | null;
+    height?: string | null;
+    hasHsCode?: string | null;
+    hasCertificateOfConformity?: string | null;
+    commercialValueUsd?: string | number | null;
     urgency: string;
+    contactMethod?: string;
+    notes?: string | null;
     status: string;
     createdAt: string;
 };
@@ -154,6 +166,7 @@ const serviceTypes = [
     "Sea Freight",
     "Road Freight",
     "Clearing & Forwarding",
+    "Import Clearing & Logistics",
     "General Supplies",
     "Door-to-Door Delivery",
 ];
@@ -211,11 +224,46 @@ function getTodayFileDate() {
     return new Date().toISOString().slice(0, 10);
 }
 
+function formatRequestType(requestType?: string) {
+    return requestType === "import" ? "Import Request" : "General Quote";
+}
+
+function formatUsdValue(value?: string | number | null) {
+    if (value === null || value === undefined || value === "") return "-";
+    return `USD ${value}`;
+}
+
+function buildQuoteRemarks(quote: QuoteRequest) {
+    const requestLabel = formatRequestType(quote.requestType);
+
+    const lines = [
+        `Created from ${requestLabel} #${quote.id}`,
+        `Customer email: ${quote.email}`,
+        `Commodity: ${quote.commodityType}`,
+    ];
+
+    if (quote.requestType === "import") {
+        lines.push(`HS Code Available: ${quote.hasHsCode || "Not provided"}`);
+        lines.push(
+            `Certificate of Conformity: ${quote.hasCertificateOfConformity || "Not provided"
+            }`
+        );
+        lines.push(`Commercial Value: ${formatUsdValue(quote.commercialValueUsd)}`);
+    }
+
+    if (quote.notes) {
+        lines.push(`Notes: ${quote.notes}`);
+    }
+
+    return lines.join("\n");
+}
+
 function exportQuotesCsv(quotes: QuoteRequest[]) {
     downloadCsv(
         `tenwa-quote-requests-${getTodayFileDate()}.csv`,
         [
             "ID",
+            "Request Type",
             "Client Name",
             "Email",
             "Phone",
@@ -224,12 +272,16 @@ function exportQuotesCsv(quotes: QuoteRequest[]) {
             "Commodity",
             "Origin",
             "Destination",
+            "HS Code",
+            "Certificate of Conformity",
+            "Commercial Value USD",
             "Urgency",
             "Status",
             "Created At",
         ],
         quotes.map((quote) => [
             quote.id,
+            formatRequestType(quote.requestType),
             quote.fullName,
             quote.email,
             quote.phone,
@@ -238,6 +290,9 @@ function exportQuotesCsv(quotes: QuoteRequest[]) {
             quote.commodityType,
             quote.origin,
             quote.destination,
+            quote.hasHsCode,
+            quote.hasCertificateOfConformity,
+            quote.commercialValueUsd,
             quote.urgency,
             quote.status,
             quote.createdAt,
@@ -293,6 +348,7 @@ function exportCustomersCsv(quotes: QuoteRequest[]) {
             "Email",
             "Phone",
             "Customer Type",
+            "Request Type",
             "Last Requested Service",
             "Last Commodity",
             "Last Origin",
@@ -305,6 +361,7 @@ function exportCustomersCsv(quotes: QuoteRequest[]) {
             quote.email,
             quote.phone,
             quote.customerType,
+            formatRequestType(quote.requestType),
             quote.serviceType,
             quote.commodityType,
             quote.origin,
@@ -411,6 +468,30 @@ function AdminDashboard() {
             console.error(error);
             setMessage("Could not update quote status.");
         }
+    }
+
+    function prepareShipmentFromQuote(quote: QuoteRequest) {
+        setShipmentForm({
+            customerName: quote.fullName,
+            customerPhone: quote.phone,
+            serviceType:
+                quote.requestType === "import"
+                    ? "Import Clearing & Logistics"
+                    : quote.serviceType,
+            origin: quote.origin,
+            destination: quote.destination || "Kenya",
+            currentLocation: quote.origin,
+            status: "Quote received",
+            estimatedDelivery: "",
+            remarks: buildQuoteRemarks(quote),
+        });
+
+        setActiveTab("shipments");
+        setMessage(
+            `Shipment form prepared from ${formatRequestType(
+                quote.requestType
+            )} #${quote.id}. Review it, then click Create Shipment.`
+        );
     }
 
     async function createShipment(e: FormEvent<HTMLFormElement>) {
@@ -594,6 +675,7 @@ function AdminDashboard() {
                                 <QuotesSection
                                     quotes={quotes}
                                     onStatusChange={updateQuoteStatus}
+                                    onCreateTracking={prepareShipmentFromQuote}
                                 />
                             )}
 
@@ -821,9 +903,14 @@ function AnalyticsSection({ analytics }: AnalyticsSectionProps) {
 type QuotesSectionProps = {
     quotes: QuoteRequest[];
     onStatusChange: (quoteId: number, status: string) => void;
+    onCreateTracking: (quote: QuoteRequest) => void;
 };
 
-function QuotesSection({ quotes, onStatusChange }: QuotesSectionProps) {
+function QuotesSection({
+    quotes,
+    onStatusChange,
+    onCreateTracking,
+}: QuotesSectionProps) {
     return (
         <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
             <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
@@ -832,7 +919,7 @@ function QuotesSection({ quotes, onStatusChange }: QuotesSectionProps) {
                         Recent quote requests
                     </h3>
                     <p className="text-sm text-slate-500">
-                        Quote requests submitted from the website and saved in PostgreSQL.
+                        General quote and import requests submitted from the website.
                     </p>
                 </div>
 
@@ -847,30 +934,47 @@ function QuotesSection({ quotes, onStatusChange }: QuotesSectionProps) {
             </div>
 
             <div className="overflow-x-auto">
-                <table className="w-full min-w-[1000px] border-separate border-spacing-y-3">
+                <table className="w-full min-w-[1350px] border-separate border-spacing-y-3">
                     <thead>
                         <tr className="text-left text-sm text-slate-500">
                             <th className="px-4">Client</th>
                             <th className="px-4">Contact</th>
+                            <th className="px-4">Request Type</th>
                             <th className="px-4">Customer Type</th>
                             <th className="px-4">Service</th>
                             <th className="px-4">Commodity</th>
                             <th className="px-4">Route</th>
+                            <th className="px-4">Import Details</th>
                             <th className="px-4">Urgency</th>
                             <th className="px-4">Status</th>
+                            <th className="px-4">Action</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         {quotes.map((quote) => (
-                            <tr key={quote.id} className="bg-slate-50">
+                            <tr key={quote.id} className="bg-slate-50 align-top">
                                 <td className="rounded-l-2xl px-4 py-4 font-black text-[#061846]">
-                                    {quote.fullName}
+                                    <p>{quote.fullName}</p>
+                                    <p className="mt-1 text-xs font-bold text-slate-400">
+                                        #{quote.id}
+                                    </p>
                                 </td>
 
                                 <td className="px-4 py-4 text-sm font-bold text-slate-600">
                                     <p>{quote.phone}</p>
                                     <p className="text-slate-400">{quote.email}</p>
+                                </td>
+
+                                <td className="px-4 py-4">
+                                    <span
+                                        className={`rounded-full px-3 py-1 text-xs font-black ${quote.requestType === "import"
+                                                ? "bg-red-100 text-[#E30613]"
+                                                : "bg-blue-100 text-blue-700"
+                                            }`}
+                                    >
+                                        {formatRequestType(quote.requestType)}
+                                    </span>
                                 </td>
 
                                 <td className="px-4 py-4 font-bold text-slate-600">
@@ -889,13 +993,33 @@ function QuotesSection({ quotes, onStatusChange }: QuotesSectionProps) {
                                     {quote.origin} → {quote.destination}
                                 </td>
 
+                                <td className="px-4 py-4 text-sm font-bold text-slate-600">
+                                    {quote.requestType === "import" ? (
+                                        <div className="grid gap-1">
+                                            <p>HS Code: {quote.hasHsCode || "-"}</p>
+                                            <p>
+                                                CoC:{" "}
+                                                {quote.hasCertificateOfConformity || "-"}
+                                            </p>
+                                            <p>
+                                                Value:{" "}
+                                                {formatUsdValue(
+                                                    quote.commercialValueUsd
+                                                )}
+                                            </p>
+                                        </div>
+                                    ) : (
+                                        <span className="text-slate-400">-</span>
+                                    )}
+                                </td>
+
                                 <td className="px-4 py-4">
                                     <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-black text-amber-700">
                                         {quote.urgency}
                                     </span>
                                 </td>
 
-                                <td className="rounded-r-2xl px-4 py-4">
+                                <td className="px-4 py-4">
                                     <select
                                         value={quote.status}
                                         onChange={(e) =>
@@ -909,6 +1033,16 @@ function QuotesSection({ quotes, onStatusChange }: QuotesSectionProps) {
                                             </option>
                                         ))}
                                     </select>
+                                </td>
+
+                                <td className="rounded-r-2xl px-4 py-4">
+                                    <button
+                                        type="button"
+                                        onClick={() => onCreateTracking(quote)}
+                                        className="rounded-full bg-[#061846] px-4 py-2 text-xs font-black text-white transition hover:bg-[#0b2a70]"
+                                    >
+                                        Create Tracking
+                                    </button>
                                 </td>
                             </tr>
                         ))}
@@ -961,8 +1095,8 @@ function ShipmentsSection({
                     Create shipment tracking
                 </h3>
                 <p className="mt-1 text-sm leading-6 text-slate-500">
-                    Admin creates a shipment record. The backend will generate a
-                    tracking code like TENWA-0001 and save it in PostgreSQL.
+                    Admin creates a shipment or import tracking record. The backend
+                    will generate a tracking code like TENWA-0001.
                 </p>
 
                 {createdTrackingCode && (
@@ -1134,7 +1268,7 @@ function ShipmentsSection({
                                     remarks: e.target.value,
                                 }))
                             }
-                            rows={4}
+                            rows={5}
                             className="w-full resize-none rounded-2xl border border-slate-200 px-4 py-4 font-bold outline-none focus:border-[#E30613] focus:ring-4 focus:ring-red-100"
                             placeholder="Add shipment notes..."
                         />
@@ -1167,8 +1301,8 @@ function ShipmentsSection({
                             Update shipment tracking
                         </h3>
                         <p className="mt-1 text-sm leading-6 text-slate-500">
-                            When admin updates status, location or remarks, the customer will
-                            see the latest result using the public tracking code.
+                            When admin updates status, location or remarks, the customer
+                            will see the latest result using the public tracking code.
                         </p>
                     </div>
 
