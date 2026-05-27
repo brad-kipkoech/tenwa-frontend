@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import cargoImage from "../assets/cargo.png";
 import planeImage from "../assets/plane.png";
 import roadFreightImage from "../assets/road-freight.png";
-import importClearingImage from "../assets/import-clearing.png";
+import importClearingImage from "../assets/import.png";
 type TabKey = "sea" | "road" | "air" | "import";
 
 const tabConfig = [

@@ -5,7 +5,7 @@ import planeImage from "../assets/plane.png";
 import cargoImage from "../assets/cargo.png";
 import heroImage from "../assets/hero.png";
 import roadFreightImage from "../assets/road-freight.png";
-import importClearingImage from "../assets/import-clearing.png";
+import importClearingImage from "../assets/import.png";
 const services = [
     {
         titleKey: "services.items.airFreight.title",
