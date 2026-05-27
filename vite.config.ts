@@ -9,7 +9,7 @@ export default defineConfig({
     tailwindcss(),
     ViteSitemap({
       hostname: "https://tenwatradingandlogistics.com",
-      generateRobotsTxt: true,
+      generateRobotsTxt: false,
       robots: [
         {
           userAgent: "*",
