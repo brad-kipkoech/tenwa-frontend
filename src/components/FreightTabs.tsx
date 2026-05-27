@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import cargoImage from "../assets/cargo.png";
 import planeImage from "../assets/plane.png";
 import roadFreightImage from "../assets/road-freight.png";
-
+import importClearingImage from "../assets/import-clearing.png";
 type TabKey = "sea" | "road" | "air" | "import";
 
 const tabConfig = [
@@ -38,7 +38,7 @@ const tabConfig = [
         labelKey: "freightTabs.tabs.import",
         contentKey: "freightTabs.content.import",
         icon: Boxes,
-        image: cargoImage,
+        image: importClearingImage,
         imageAlt: "Import cargo containers and customs clearing",
     },
 ];
@@ -99,8 +99,8 @@ function FreightTabs() {
                                 type="button"
                                 onClick={() => setActiveTab(tab.key)}
                                 className={`inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-black transition ${isActive
-                                        ? "bg-[#E30613] text-white shadow-lg shadow-red-500/20"
-                                        : "border border-slate-200 bg-white text-slate-700 hover:border-[#E30613] hover:text-[#E30613]"
+                                    ? "bg-[#E30613] text-white shadow-lg shadow-red-500/20"
+                                    : "border border-slate-200 bg-white text-slate-700 hover:border-[#E30613] hover:text-[#E30613]"
                                     }`}
                             >
                                 <Icon size={18} />

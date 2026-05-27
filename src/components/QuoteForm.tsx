@@ -534,7 +534,7 @@ function QuoteForm() {
 
                                         <div>
                                             <label className={labelClass}>
-                                                {t("quoteForm.labels.urgency") || "Urgency"}
+                                                Urgency
                                             </label>
                                             <select
                                                 name="urgency"
@@ -542,9 +542,8 @@ function QuoteForm() {
                                                 onChange={handleChange}
                                                 className={inputClass}
                                             >
-                                                <option value="Normal">Normal</option>
-                                                <option value="Urgent">Urgent</option>
-                                                <option value="Express">Express</option>
+                                                <option value="General Service">General Service</option>
+                                                <option value="Express Service">Express Service</option>
                                             </select>
                                         </div>
                                     </div>
