@@ -252,7 +252,7 @@ function QuoteForm() {
                                     className={inputClass}
                                 >
                                     <option value="general">
-                                        General Quote Request
+                                        Export Request
                                     </option>
                                     <option value="import">
                                         Import Request
