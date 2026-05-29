@@ -241,7 +241,7 @@ function QuoteForm() {
                         <form onSubmit={handleSubmit} className="grid gap-5">
                             <div>
                                 <label className={labelClass}>
-                                    What type of request is this?
+                                    {t("quoteForm.labels.requestType")}
                                 </label>
 
                                 <select
@@ -252,10 +252,10 @@ function QuoteForm() {
                                     className={inputClass}
                                 >
                                     <option value="general">
-                                        Export Request
+                                        {t("quoteForm.options.general")}
                                     </option>
                                     <option value="import">
-                                        Import Request
+                                        {t("quoteForm.options.import")}
                                     </option>
                                 </select>
                             </div>
@@ -534,7 +534,7 @@ function QuoteForm() {
 
                                         <div>
                                             <label className={labelClass}>
-                                                Urgency
+                                                {t("quoteForm.labels.urgency")}
                                             </label>
                                             <select
                                                 name="urgency"
@@ -542,8 +542,12 @@ function QuoteForm() {
                                                 onChange={handleChange}
                                                 className={inputClass}
                                             >
-                                                <option value="General Service">General Service</option>
-                                                <option value="Express Service">Express Service</option>
+                                                <option value="General Service">
+                                                    {t("quoteForm.options.generalService")}
+                                                </option>
+                                                <option value="Express Service">
+                                                    {t("quoteForm.options.expressService")}
+                                                </option>
                                             </select>
                                         </div>
                                     </div>

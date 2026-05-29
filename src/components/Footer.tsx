@@ -1,6 +1,8 @@
 import { Mail, MapPin, Phone, WalletCards } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
+import logo from "../assets/logo.png";
+
 function Footer() {
     const { t } = useTranslation();
 
@@ -9,11 +11,13 @@ function Footer() {
             <div className="mx-auto grid max-w-7xl gap-10 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-4">
                 <div>
                     <div className="flex items-center gap-3">
-                        <img
-                            src="/src/assets/logo.png"
-                            alt="Tenwa logo"
-                            className="h-14 w-14 rounded-full object-contain"
-                        />
+                        <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white p-2">
+                            <img
+                                src={logo}
+                                alt="Tenwa Logistics"
+                                className="h-full w-full object-contain"
+                            />
+                        </div>
 
                         <div>
                             <h3 className="text-2xl font-black text-white">
@@ -36,17 +40,17 @@ function Footer() {
                     <div className="grid gap-4 text-slate-400">
                         <p className="flex gap-3">
                             <Phone className="shrink-0 text-[#E30613]" size={20} />
-                            +254 712 395 451
+                            {t("footer.phone1")}
                         </p>
 
                         <p className="flex gap-3">
                             <Phone className="shrink-0 text-[#E30613]" size={20} />
-                            +254 796 844 994
+                            {t("footer.phone2")}
                         </p>
 
                         <p className="flex gap-3 break-all">
                             <Mail className="shrink-0 text-[#E30613]" size={20} />
-                            tenwalogea.quoteske@outlook.com
+                            {t("footer.email")}
                         </p>
                     </div>
                 </div>
@@ -84,7 +88,9 @@ function Footer() {
                         <p className="mt-4 text-sm font-bold text-slate-400">
                             {t("footer.accountNumber")}
                         </p>
-                        <p className="font-black text-white">7718050858</p>
+                        <p className="font-black text-white">
+                            {t("footer.accountNumberValue")}
+                        </p>
 
                         <p className="mt-4 text-sm font-bold text-slate-400">
                             {t("footer.accountName")}

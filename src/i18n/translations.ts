@@ -200,11 +200,18 @@ export const resources = {
                 success: "Quote request captured. Backend connection comes next.",
                 submit: "Submit Quote Request",
 
+                importHelp: {
+                    title: "Choose Import Request when the customer needs import clearing, HS code support, Certificate of Conformity handling or import logistics.",
+                    text: "For road freight, local deliveries, air freight, sea freight, clearing, forwarding and general logistics, use General Quote Request.",
+                },
+
                 labels: {
                     fullName: "Full Name",
                     email: "Email Address",
                     phone: "Phone Number",
                     customerType: "Customer Type",
+                    requestType: "What type of request is this?",
+                    urgency: "Urgency",
                     serviceNeeded: "Service Needed",
                     commodityType: "Commodity Type",
                     origin: "Origin",
@@ -233,6 +240,8 @@ export const resources = {
 
                 options: {
                     selectCustomerType: "Select customer type",
+                    generalQuoteRequest: "General Quote Request",
+                    importRequest: "Import Request",
                     individual: "Individual",
                     sme: "SME / Small Business",
                     corporate: "Corporate",
@@ -567,11 +576,18 @@ export const resources = {
                 preparing: "Inaandaa ombi...",
                 success: "Ombi la bei limepokelewa. Backend itaunganishwa baadaye.",
                 submit: "Tuma Ombi la Bei",
+                importHelp: {
+                    title: "Chagua Ombi la Uagizaji ikiwa mteja anahitaji clearing ya import, usaidizi wa HS code, Certificate of Conformity au logistics za uagizaji.",
+                    text: "Kwa usafiri wa barabara, delivery za ndani, air freight, sea freight, clearing, forwarding na logistics za kawaida, tumia Ombi la Bei la Kawaida.",
+                },
+
                 labels: {
                     fullName: "Jina Kamili",
                     email: "Barua Pepe",
                     phone: "Nambari ya Simu",
                     customerType: "Aina ya Mteja",
+                    requestType: "Hili ni ombi la aina gani?",
+                    urgency: "Uharaka",
                     serviceNeeded: "Huduma Inayohitajika",
                     commodityType: "Aina ya Bidhaa",
                     origin: "Chanzo",
@@ -598,6 +614,8 @@ export const resources = {
                 },
                 options: {
                     selectCustomerType: "Chagua aina ya mteja",
+                    generalQuoteRequest: "Ombi la Bei la Kawaida",
+                    importRequest: "Ombi la Uagizaji",
                     individual: "Mtu binafsi",
                     sme: "SME / Biashara Ndogo",
                     corporate: "Kampuni",
@@ -931,11 +949,18 @@ export const resources = {
                 success:
                     "Demande de devis enregistrée. La connexion backend viendra ensuite.",
                 submit: "Soumettre la demande de devis",
+                importHelp: {
+                    title: "Choisissez Demande d’importation lorsque le client a besoin de dédouanement à l’import, d’aide pour le code SH, de certificat de conformité ou de logistique d’importation.",
+                    text: "Pour le fret routier, les livraisons locales, le fret aérien, le fret maritime, le dédouanement, le transit et la logistique générale, utilisez Demande de devis général.",
+                },
+
                 labels: {
                     fullName: "Nom complet",
                     email: "Adresse e-mail",
                     phone: "Numéro de téléphone",
                     customerType: "Type de client",
+                    requestType: "Quel type de demande est-ce ?",
+                    urgency: "Urgence",
                     serviceNeeded: "Service requis",
                     commodityType: "Type de marchandise",
                     origin: "Origine",
@@ -963,6 +988,8 @@ export const resources = {
                 },
                 options: {
                     selectCustomerType: "Sélectionner le type de client",
+                    generalQuoteRequest: "Demande de devis général",
+                    importRequest: "Demande d’importation",
                     individual: "Particulier",
                     sme: "PME / Petite entreprise",
                     corporate: "Entreprise",
@@ -1288,11 +1315,18 @@ export const resources = {
                 preparing: "正在准备请求...",
                 success: "报价请求已记录。后端连接将在下一步完成。",
                 submit: "提交报价请求",
+                importHelp: {
+                    title: "当客户需要进口清关、HS 编码支持、符合性证书处理或进口物流时，请选择进口请求。",
+                    text: "对于公路运输、本地配送、空运、海运、清关、货运代理和一般物流，请使用普通报价请求。",
+                },
+
                 labels: {
                     fullName: "全名",
                     email: "电子邮件地址",
                     phone: "电话号码",
                     customerType: "客户类型",
+                    requestType: "这是什么类型的请求？",
+                    urgency: "紧急程度",
                     serviceNeeded: "所需服务",
                     commodityType: "货物类型",
                     origin: "起点",
@@ -1319,6 +1353,8 @@ export const resources = {
                 },
                 options: {
                     selectCustomerType: "选择客户类型",
+                    generalQuoteRequest: "普通报价请求",
+                    importRequest: "进口请求",
                     individual: "个人",
                     sme: "中小企业 / 小型企业",
                     corporate: "企业",
@@ -1634,11 +1670,18 @@ export const resources = {
                 preparing: "جارٍ تجهيز الطلب...",
                 success: "تم تسجيل طلب عرض السعر. سيتم ربط الواجهة الخلفية لاحقًا.",
                 submit: "إرسال طلب عرض السعر",
+                importHelp: {
+                    title: "اختر طلب استيراد عندما يحتاج العميل إلى تخليص الاستيراد أو دعم رمز HS أو شهادة المطابقة أو لوجستيات الاستيراد.",
+                    text: "للشحن البري، والتوصيلات المحلية، والشحن الجوي، والشحن البحري، والتخليص، والشحن، والخدمات اللوجستية العامة، استخدم طلب عرض سعر عام.",
+                },
+
                 labels: {
                     fullName: "الاسم الكامل",
                     email: "البريد الإلكتروني",
                     phone: "رقم الهاتف",
                     customerType: "نوع العميل",
+                    requestType: "ما نوع هذا الطلب؟",
+                    urgency: "درجة الاستعجال",
                     serviceNeeded: "الخدمة المطلوبة",
                     commodityType: "نوع البضاعة",
                     origin: "المنشأ",
@@ -1665,6 +1708,8 @@ export const resources = {
                 },
                 options: {
                     selectCustomerType: "اختر نوع العميل",
+                    generalQuoteRequest: "طلب عرض سعر عام",
+                    importRequest: "طلب استيراد",
                     individual: "فرد",
                     sme: "مؤسسة صغيرة / عمل صغير",
                     corporate: "شركة",
@@ -1981,11 +2026,18 @@ export const resources = {
                 success:
                     "Solicitud de cotización registrada. La conexión backend viene después.",
                 submit: "Enviar solicitud de cotización",
+                importHelp: {
+                    title: "Elige Solicitud de importación cuando el cliente necesite despacho de importación, apoyo con código HS, Certificado de Conformidad o logística de importación.",
+                    text: "Para transporte terrestre, entregas locales, carga aérea, carga marítima, despacho, forwarding y logística general, usa Solicitud de cotización general.",
+                },
+
                 labels: {
                     fullName: "Nombre completo",
                     email: "Correo electrónico",
                     phone: "Número de teléfono",
                     customerType: "Tipo de cliente",
+                    requestType: "¿Qué tipo de solicitud es esta?",
+                    urgency: "Urgencia",
                     serviceNeeded: "Servicio requerido",
                     commodityType: "Tipo de mercancía",
                     origin: "Origen",
@@ -2012,6 +2064,8 @@ export const resources = {
                 },
                 options: {
                     selectCustomerType: "Seleccionar tipo de cliente",
+                    generalQuoteRequest: "Solicitud de cotización general",
+                    importRequest: "Solicitud de importación",
                     individual: "Individual",
                     sme: "Pyme / Pequeña empresa",
                     corporate: "Corporativo",
@@ -2330,11 +2384,18 @@ export const resources = {
                 preparing: "Anfrage wird vorbereitet...",
                 success: "Angebotsanfrage erfasst. Backend-Verbindung folgt als Nächstes.",
                 submit: "Angebotsanfrage senden",
+                importHelp: {
+                    title: "Wählen Sie Importanfrage, wenn der Kunde Importabfertigung, HS-Code-Unterstützung, Konformitätszertifikat oder Importlogistik benötigt.",
+                    text: "Für Straßentransport, lokale Lieferungen, Luftfracht, Seefracht, Zollabfertigung, Spedition und allgemeine Logistik verwenden Sie Allgemeine Angebotsanfrage.",
+                },
+
                 labels: {
                     fullName: "Vollständiger Name",
                     email: "E-Mail-Adresse",
                     phone: "Telefonnummer",
                     customerType: "Kundentyp",
+                    requestType: "Welche Art von Anfrage ist das?",
+                    urgency: "Dringlichkeit",
                     serviceNeeded: "Benötigter Service",
                     commodityType: "Warentyp",
                     origin: "Ursprung",
@@ -2361,6 +2422,8 @@ export const resources = {
                 },
                 options: {
                     selectCustomerType: "Kundentyp auswählen",
+                    generalQuoteRequest: "Allgemeine Angebotsanfrage",
+                    importRequest: "Importanfrage",
                     individual: "Privatperson",
                     sme: "KMU / Kleinunternehmen",
                     corporate: "Unternehmen",
