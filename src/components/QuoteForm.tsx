@@ -206,14 +206,11 @@ function QuoteForm() {
 
                     <div className="mt-8 rounded-3xl border border-slate-200 bg-white/80 p-5 shadow-sm">
                         <p className="font-black text-[#061846]">
-                            Choose Import Request when the customer needs import clearing,
-                            HS code support, Certificate of Conformity handling or import
-                            logistics.
+                            {t("quoteForm.importHelp.title")}
                         </p>
+
                         <p className="mt-3 text-sm leading-6 text-slate-600">
-                            For road freight, local deliveries, air freight, sea freight,
-                            clearing, forwarding and general logistics, use General Quote
-                            Request.
+                            {t("quoteForm.importHelp.text")}
                         </p>
                     </div>
                 </div>
@@ -251,11 +248,11 @@ function QuoteForm() {
                                     required
                                     className={inputClass}
                                 >
-                                    <option value="general">
-                                        {t("quoteForm.options.general")}
+                                    <option value="export">
+                                        {t("quoteForm.options.exportRequest")}
                                     </option>
                                     <option value="import">
-                                        {t("quoteForm.options.import")}
+                                        {t("quoteForm.options.importRequest")}
                                     </option>
                                 </select>
                             </div>

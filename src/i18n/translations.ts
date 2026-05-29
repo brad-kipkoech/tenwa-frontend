@@ -202,7 +202,7 @@ export const resources = {
 
                 importHelp: {
                     title: "Choose Import Request when the customer needs import clearing, HS code support, Certificate of Conformity handling or import logistics.",
-                    text: "For road freight, local deliveries, air freight, sea freight, clearing, forwarding and general logistics, use General Quote Request.",
+                    text: "For export shipments, road freight, local deliveries, air freight, sea freight, clearing, forwarding and general logistics, use Export Request.",
                 },
 
                 labels: {
@@ -240,8 +240,10 @@ export const resources = {
 
                 options: {
                     selectCustomerType: "Select customer type",
-                    generalQuoteRequest: "General Quote Request",
+                    exportRequest: "Export Request",
                     importRequest: "Import Request",
+                    general: "Export Request",
+                    import: "Import Request",
                     individual: "Individual",
                     sme: "SME / Small Business",
                     corporate: "Corporate",
@@ -578,7 +580,7 @@ export const resources = {
                 submit: "Tuma Ombi la Bei",
                 importHelp: {
                     title: "Chagua Ombi la Uagizaji ikiwa mteja anahitaji clearing ya import, usaidizi wa HS code, Certificate of Conformity au logistics za uagizaji.",
-                    text: "Kwa usafiri wa barabara, delivery za ndani, air freight, sea freight, clearing, forwarding na logistics za kawaida, tumia Ombi la Bei la Kawaida.",
+                    text: "Kwa mizigo ya export, usafiri wa barabara, delivery za ndani, air freight, sea freight, clearing, forwarding na logistics za kawaida, tumia Ombi la Usafirishaji Nje.",
                 },
 
                 labels: {
@@ -614,8 +616,10 @@ export const resources = {
                 },
                 options: {
                     selectCustomerType: "Chagua aina ya mteja",
-                    generalQuoteRequest: "Ombi la Bei la Kawaida",
+                    exportRequest: "Ombi la Usafirishaji Nje",
                     importRequest: "Ombi la Uagizaji",
+                    general: "Ombi la Usafirishaji Nje",
+                    import: "Ombi la Uagizaji",
                     individual: "Mtu binafsi",
                     sme: "SME / Biashara Ndogo",
                     corporate: "Kampuni",
@@ -951,7 +955,7 @@ export const resources = {
                 submit: "Soumettre la demande de devis",
                 importHelp: {
                     title: "Choisissez Demande d’importation lorsque le client a besoin de dédouanement à l’import, d’aide pour le code SH, de certificat de conformité ou de logistique d’importation.",
-                    text: "Pour le fret routier, les livraisons locales, le fret aérien, le fret maritime, le dédouanement, le transit et la logistique générale, utilisez Demande de devis général.",
+                    text: "Pour les expéditions d’exportation, le fret routier, les livraisons locales, le fret aérien, le fret maritime, le dédouanement, le transit et la logistique générale, utilisez Demande d’exportation.",
                 },
 
                 labels: {
@@ -988,8 +992,10 @@ export const resources = {
                 },
                 options: {
                     selectCustomerType: "Sélectionner le type de client",
-                    generalQuoteRequest: "Demande de devis général",
+                    exportRequest: "Demande d’exportation",
                     importRequest: "Demande d’importation",
+                    general: "Demande d’exportation",
+                    import: "Demande d’importation",
                     individual: "Particulier",
                     sme: "PME / Petite entreprise",
                     corporate: "Entreprise",
@@ -1317,7 +1323,7 @@ export const resources = {
                 submit: "提交报价请求",
                 importHelp: {
                     title: "当客户需要进口清关、HS 编码支持、符合性证书处理或进口物流时，请选择进口请求。",
-                    text: "对于公路运输、本地配送、空运、海运、清关、货运代理和一般物流，请使用普通报价请求。",
+                    text: "对于出口货运、公路运输、本地配送、空运、海运、清关、货运代理和一般物流，请使用出口请求。",
                 },
 
                 labels: {
@@ -1353,8 +1359,10 @@ export const resources = {
                 },
                 options: {
                     selectCustomerType: "选择客户类型",
-                    generalQuoteRequest: "普通报价请求",
+                    exportRequest: "出口请求",
                     importRequest: "进口请求",
+                    general: "出口请求",
+                    import: "进口请求",
                     individual: "个人",
                     sme: "中小企业 / 小型企业",
                     corporate: "企业",
@@ -1672,7 +1680,7 @@ export const resources = {
                 submit: "إرسال طلب عرض السعر",
                 importHelp: {
                     title: "اختر طلب استيراد عندما يحتاج العميل إلى تخليص الاستيراد أو دعم رمز HS أو شهادة المطابقة أو لوجستيات الاستيراد.",
-                    text: "للشحن البري، والتوصيلات المحلية، والشحن الجوي، والشحن البحري، والتخليص، والشحن، والخدمات اللوجستية العامة، استخدم طلب عرض سعر عام.",
+                    text: "لشحنات التصدير، والشحن البري، والتوصيلات المحلية، والشحن الجوي، والشحن البحري، والتخليص، والشحن، والخدمات اللوجستية العامة، استخدم طلب تصدير.",
                 },
 
                 labels: {
@@ -1708,8 +1716,10 @@ export const resources = {
                 },
                 options: {
                     selectCustomerType: "اختر نوع العميل",
-                    generalQuoteRequest: "طلب عرض سعر عام",
+                    exportRequest: "طلب تصدير",
                     importRequest: "طلب استيراد",
+                    general: "طلب تصدير",
+                    import: "طلب استيراد",
                     individual: "فرد",
                     sme: "مؤسسة صغيرة / عمل صغير",
                     corporate: "شركة",
@@ -2028,7 +2038,7 @@ export const resources = {
                 submit: "Enviar solicitud de cotización",
                 importHelp: {
                     title: "Elige Solicitud de importación cuando el cliente necesite despacho de importación, apoyo con código HS, Certificado de Conformidad o logística de importación.",
-                    text: "Para transporte terrestre, entregas locales, carga aérea, carga marítima, despacho, forwarding y logística general, usa Solicitud de cotización general.",
+                    text: "Para envíos de exportación, transporte terrestre, entregas locales, carga aérea, carga marítima, despacho, forwarding y logística general, usa Solicitud de exportación.",
                 },
 
                 labels: {
@@ -2064,8 +2074,10 @@ export const resources = {
                 },
                 options: {
                     selectCustomerType: "Seleccionar tipo de cliente",
-                    generalQuoteRequest: "Solicitud de cotización general",
+                    exportRequest: "Solicitud de exportación",
                     importRequest: "Solicitud de importación",
+                    general: "Solicitud de exportación",
+                    import: "Solicitud de importación",
                     individual: "Individual",
                     sme: "Pyme / Pequeña empresa",
                     corporate: "Corporativo",
@@ -2386,7 +2398,7 @@ export const resources = {
                 submit: "Angebotsanfrage senden",
                 importHelp: {
                     title: "Wählen Sie Importanfrage, wenn der Kunde Importabfertigung, HS-Code-Unterstützung, Konformitätszertifikat oder Importlogistik benötigt.",
-                    text: "Für Straßentransport, lokale Lieferungen, Luftfracht, Seefracht, Zollabfertigung, Spedition und allgemeine Logistik verwenden Sie Allgemeine Angebotsanfrage.",
+                    text: "Für Exportsendungen, Straßentransport, lokale Lieferungen, Luftfracht, Seefracht, Zollabfertigung, Spedition und allgemeine Logistik verwenden Sie Exportanfrage.",
                 },
 
                 labels: {
@@ -2422,8 +2434,10 @@ export const resources = {
                 },
                 options: {
                     selectCustomerType: "Kundentyp auswählen",
-                    generalQuoteRequest: "Allgemeine Angebotsanfrage",
+                    exportRequest: "Exportanfrage",
                     importRequest: "Importanfrage",
+                    general: "Exportanfrage",
+                    import: "Importanfrage",
                     individual: "Privatperson",
                     sme: "KMU / Kleinunternehmen",
                     corporate: "Unternehmen",
