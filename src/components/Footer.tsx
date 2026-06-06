@@ -64,8 +64,8 @@ function Footer() {
                     </p>
 
                     <div className="mt-6">
-                        <h5 className="font-black text-white">{t("footer.leadership")}</h5>
-                        <p className="text-slate-400">{t("footer.coo")}</p>
+                        <h5 className="font-black text-white">{t("footer.global partner offices")}</h5>
+                        <p className="text-slate-400">{t("USA, UK, UAE, CHINA")}</p>
                     </div>
                 </div>
 
